@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Customer</title>
+</head>
+
+<body>
+    <form id="delete-form">
+        <label for="customerID">Customer ID:</label>
+        <input type="text" id="customerID" name="customerID">
+        <button id="delete-button" type="submit">Delete</button>
+    </form>
+
+    <script>
+        const deleteButton = document.getElementById("delete-button");
+        const customerID = document.getElementById("customerID");
+
+        function FetchDel(event) {
+            event.preventDefault(); 
+            let url = `https://northwind.vercel.app/api/customers/${customerID.value}`;
+
+            fetch(url, {
+                method: "DELETE",
+            }).then((res) => {
+                if (res.ok) {
+                    console.log(" silindi");
+                } else {
+                    console.error("Silinemedi");
+                }
+            });
+        }
+
+        deleteButton.addEventListener("click", FetchDel);
+    </script>
+</body>
+
+</html>

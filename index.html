@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Update</h2>
+        <form id="update-form">
+          <label for="customerID">Güncellenecek Customer ID:</label>
+          <input type="text" id="customerID" name="customerID" required>
+          <label for="companyName">Yeni Company Name:</label>
+          <input type="text" id="companyName" name="companyName">
+          <label for="contactName">Yeni Contact Name:</label>
+          <input type="text" id="contactName" name="contactName">
+          <button type="submit">Güncelle</button>
+        </form>
+      </div>
+    <h2>Sil</h2>
+    <form id="delete-form">
+        <label for="customerID">Silinecek Customer ID:</label>
+        <input type="text" id="customerID" name="customerID" required>
+        <button type="submit">Sil</button>
+    </form>
+    <div id="dataOnload"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
